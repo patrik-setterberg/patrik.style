@@ -1,6 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`    
     :root {
         --text-color: #333;
     }
@@ -16,11 +16,11 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
   
-    body {
+    #root {
         display: flex;
         flex-direction: column;
-        font-family: 'Source Sans Pro', sans-serif;
-        height: auto;
+        font-family: 'Nunito Sans', sans-serif;
+        height: 100%;
         color: var(--text-color);
     }
 `
