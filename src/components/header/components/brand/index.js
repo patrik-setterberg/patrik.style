@@ -19,6 +19,7 @@ const H1 = styled.h1`
     & span {
         font-weight: 600;
         letter-spacing: 2px;
+        color: #fff;
     }
 `
 
