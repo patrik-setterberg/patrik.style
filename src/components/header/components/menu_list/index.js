@@ -6,7 +6,7 @@ const StyledMenuList = styled.ul`
     list-style-type: none;
     position: absolute;
     width: 300px;
-    top: 10rem;
+    top: 7rem;
     padding-right: 2rem;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);

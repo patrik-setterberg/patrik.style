@@ -4,8 +4,8 @@ const globalVars = {
     
     // Header
     minHeaderHeight: 100, // px
-    defaultHeaderHeight: 450, // px
-    headerOpenHeight: 750, // px
+    defaultHeaderHeight: 500, // px
+    headerOpenHeight: 500, // px
     
     // Container
     containerWidth: 66 // %

@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
     ${props => props.open && css`
         z-index: 3;
         height: var(--header-open-height) !important;
-        transition: height 0.2s cubic-bezier(0.77,0.2,0.05,1.0);`
+        `
     }
 `
 
@@ -32,13 +32,22 @@ export default class Header extends Component {
         super();
         this.state = {
             open: false,
-            height: this.defaultHeight
+            height: this.defaultHeight,
+            transition: null
         }
     }
 
     toggleOpen() {
+
+        // Toggle transition. This is needed because if the component always
+        // has a transition it interferes with the header's scroll-dependent
+        // auto resizing.
+        !this.state.open ?
+            this.setState({transition: 'height 0.2s cubic-bezier(0.77,0.2,0.05,1.0)'}) :
+            setTimeout(() => {this.setState({transition: 'unset'})}, 10);
+
         this.setState({
-            open: this.state.open === false ? true : false
+            open: !this.state.open
         });
     }
 
@@ -66,8 +75,7 @@ export default class Header extends Component {
         return (
             <StyledHeader
                 open={this.state.open}
-                style={{height: `${this.state.height}px`}}
-                id="myHeader"
+                style={{height: `${this.state.height}px`, transition: `${this.state.transition}`}}
             >
                 <Menu
                     toggleOpen={this.toggleOpen.bind(this)} 
