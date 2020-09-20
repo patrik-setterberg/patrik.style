@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import Container from '../container';
 
 const StyledMain = styled.main`
     flex: 1 1 auto;
+    margin-top: var(--main-margin-top);
 `
 
 const StyledContainer = styled(Container)`
@@ -11,17 +12,17 @@ const StyledContainer = styled(Container)`
 `
 
 export default class Main extends Component {
-    
+
     constructor() {
         super();
         this.state = {}
     }
-    
+
     render() {
         return(
             <StyledMain>
                 <StyledContainer>
-                    hurra
+                    <p>React is fun.</p>
                 </StyledContainer>
             </StyledMain>
         );

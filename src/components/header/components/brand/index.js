@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import React, {Component} from 'react';
+import styled, {css} from 'styled-components';
 
 const StyledBrand = styled.div`
     width: 100%;

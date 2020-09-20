@@ -4,6 +4,7 @@ import Main from '../main';
 import Footer from '../footer';
 
 function App() {
+
   return (
     <>
       <Header />

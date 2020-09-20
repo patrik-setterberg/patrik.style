@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 import MenuListItem from '../menu_list_item';
 
 const StyledMenuList = styled.ul`

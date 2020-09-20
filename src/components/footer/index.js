@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
-import Container from '../container';
 
 const StyledFooter = styled.footer`
     width: auto;
@@ -9,7 +8,7 @@ const StyledFooter = styled.footer`
 `
 
 const FooterContainer = styled.div`
-    width: 66%;
+    width: var(--container-width);
     margin: 0 auto;
     padding: 20px;
     color: #FFEAD0;
@@ -24,7 +23,7 @@ export default class Footer extends Component {
     render() {
         return(
             <StyledFooter>
-                <FooterContainer>yo</FooterContainer>
+                <FooterContainer>FOOTER_CONTENT</FooterContainer>
             </StyledFooter>
         );
     }

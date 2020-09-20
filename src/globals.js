@@ -1,8 +1,25 @@
 import {createGlobalStyle} from 'styled-components';
 
+const globalVars = {
+    
+    // Header
+    minHeaderHeight: 100, // px
+    defaultHeaderHeight: 450, // px
+    headerOpenHeight: 750, // px
+    
+    // Container
+    containerWidth: 66 // %
+}
+
+export {globalVars};
+
+
 const GlobalStyle = createGlobalStyle`    
     :root {
         --text-color: #333;
+        --container-width: ${globalVars.containerWidth}%;
+        --header-open-height: ${globalVars.headerOpenHeight}px;
+        --main-margin-top: ${globalVars.defaultHeaderHeight}px;
     }
 
     * {
@@ -25,4 +42,4 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default GlobalStyle;
+export {GlobalStyle};

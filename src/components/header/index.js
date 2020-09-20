@@ -2,33 +2,31 @@ import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 import Menu from './components/menu';
 import Brand from './components/brand';
-
+import {globalVars} from '../../globals.js'
 
 const StyledHeader = styled.header`
     display: flex;
     align-items: center;
-    width: auto;
+    width: 100vw;
     background: linear-gradient(to bottom, #283a42, #37505C, #283a42);
     flex: 0 0 auto;
     border-bottom: 2px solid #333;
     box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.4);
-    position: sticky;
+    position: fixed;
     top: 0;
     /* transition: height 0.2s cubic-bezier(0.77,0.2,0.05,1.0); */
 
     ${props => props.open && css`
         z-index: 3;
-        position: fixed;
-        width: 100vw;
-        height: 700px !important;
+        height: var(--header-open-height) !important;
         transition: height 0.2s cubic-bezier(0.77,0.2,0.05,1.0);`
     }
 `
 
 export default class Header extends Component {
     
-    defaultHeight = 500;
-    minHeight = 100;
+    defaultHeight = globalVars.defaultHeaderHeight;
+    minHeight = globalVars.minHeaderHeight;
 
     constructor() {
         super();
@@ -69,6 +67,7 @@ export default class Header extends Component {
             <StyledHeader
                 open={this.state.open}
                 style={{height: `${this.state.height}px`}}
+                id="myHeader"
             >
                 <Menu
                     toggleOpen={this.toggleOpen.bind(this)} 
