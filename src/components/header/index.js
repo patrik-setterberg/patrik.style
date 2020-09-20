@@ -44,7 +44,7 @@ export default class Header extends Component {
         // auto resizing.
         !this.state.open ?
             this.setState({transition: 'height 0.2s cubic-bezier(0.77,0.2,0.05,1.0)'}) :
-            setTimeout(() => {this.setState({transition: 'unset'})}, 10);
+            setTimeout(() => {this.setState({transition: 'unset'})}, 30); // send help
 
         this.setState({
             open: !this.state.open
