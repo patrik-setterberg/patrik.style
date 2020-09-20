@@ -6,7 +6,7 @@ const StyledMenuList = styled.ul`
     list-style-type: none;
     position: absolute;
     width: 300px;
-    top: 7rem;
+    top: 5rem;
     padding-right: 2rem;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
@@ -15,6 +15,10 @@ const StyledMenuList = styled.ul`
     ${props => props.open && css`
         transform: translate(0%, 0%);
         opacity: 1;`
+    }
+
+    @media only screen and (min-width: 768px) {
+        top: 7rem;
     }
 `
 

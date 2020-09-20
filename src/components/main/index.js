@@ -5,6 +5,7 @@ import Container from '../container';
 const StyledMain = styled.main`
     flex: 1 1 auto;
     margin-top: var(--main-margin-top);
+    padding: 0 1rem;
 `
 
 const StyledContainer = styled(Container)`

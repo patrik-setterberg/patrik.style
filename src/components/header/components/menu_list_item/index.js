@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const StyledMenuListItem = styled.li`
      a {
         color: #FFEAD0;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         position: relative;
-        line-height: 2.5;
+        line-height: 3;
         font-weight: 300;
         text-transform: uppercase;
         text-decoration: none;
@@ -35,6 +35,13 @@ const StyledMenuListItem = styled.li`
 
     & a:hover::after {
         width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+        & a {
+            font-size: 1.6rem;
+            line-height: 2.5;
+        }
     }
 `
 

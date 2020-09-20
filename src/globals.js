@@ -17,9 +17,16 @@ export {globalVars};
 const GlobalStyle = createGlobalStyle`    
     :root {
         --text-color: #333;
-        --container-width: ${globalVars.containerWidth}%;
-        --header-open-height: ${globalVars.headerOpenHeight}px;
+        --container-width: auto;
+        --header-open-height: 100vh;
         --main-margin-top: ${globalVars.defaultHeaderHeight}px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        :root {
+            --header-open-height: ${globalVars.headerOpenHeight}px;
+            --container-width: ${globalVars.containerWidth}%;
+        }
     }
 
     * {

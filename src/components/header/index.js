@@ -18,8 +18,11 @@ const StyledHeader = styled.header`
 
     ${props => props.open && css`
         z-index: 3;
-        height: var(--header-open-height) !important;
-        `
+        height: var(--header-open-height) !important;`
+    }
+
+    @media only screen and (max-width: 767px) {
+        max-height: var(--header-mobile-height);        
     }
 `
 
