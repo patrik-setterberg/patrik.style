@@ -29,7 +29,7 @@ const StyledHeader = styled.header`
 export default class Header extends Component {
     
     defaultHeight = globalVars.defaultHeaderHeight;
-    minHeight = globalVars.minHeaderHeight;
+    minHeight = globalVars.minHeaderHeightMobile;
 
     constructor() {
         super();
@@ -54,6 +54,15 @@ export default class Header extends Component {
         });
     }
 
+    checkWidth() {
+        return window.innerWidth > 768;
+    }
+
+    setMinHeight() {
+        this.minHeight = this.checkWidth() ? globalVars.minHeaderHeightDesktop : globalVars.minHeaderHeightMobile;
+        this.setHeight();
+    }
+
     setHeight() {
         if ((this.defaultHeight - window.scrollY) > this.minHeight) {
             this.setState({
@@ -67,18 +76,30 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
+        this.setMinHeight();
         window.addEventListener('scroll', this.setHeight.bind(this));
+        window.addEventListener('resize', this.setMinHeight.bind(this));
     }
     
     componentWillUnmount() {
         window.removeEventListener('scroll', this.setHeight.bind(this));
+        window.removeEventListener('resize', this.setMinHeight.bind(this));
     }
+
+    /* maybe a utilities folder somewhere...
+    checkReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion)');
+    }
+    */
 
     render() {
         return (
             <StyledHeader
                 open={this.state.open}
-                style={{height: `${this.state.height}px`, transition: `${this.state.transition}`}}
+                style={{
+                    height: `${this.state.height}px`,
+                    transition: `${this.state.transition}`,
+                }}
             >
                 <Menu
                     toggleOpen={this.toggleOpen.bind(this)} 

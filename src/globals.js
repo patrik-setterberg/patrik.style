@@ -3,7 +3,8 @@ import {createGlobalStyle} from 'styled-components';
 const globalVars = {
     
     // Header
-    minHeaderHeight: 100, // px
+    minHeaderHeightMobile: 74, // px
+    minHeaderHeightDesktop: 100, //px
     defaultHeaderHeight: 500, // px
     headerOpenHeight: 500, // px
     

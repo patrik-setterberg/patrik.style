@@ -9,12 +9,12 @@ const H1 = styled.h1`
     color: #FFEAD0;
     font-weight: 300;
     font-family: 'Nunito', sans-serif;
-    font-size: 44px;
+    font-size: 38px;
     margin-left: max(calc(17% - 1.5rem), 60px);
     opacity: 1;
     transition: margin-left 0.2s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     ${props => props.open && css`
-        margin-left: max(250px, calc(17% - 40px));    
+        margin-left: max(250px, calc(17% - 24px));    
     
         @media only screen and (max-width: 767px) {
             opacity: 0;    
