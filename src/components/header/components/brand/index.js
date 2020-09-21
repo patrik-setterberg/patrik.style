@@ -37,9 +37,6 @@ const H1 = styled.h1`
 `
 
 export default class Brand extends Component {
-    constructor(props) {
-        super();
-    }
     
     render() {
         return(

@@ -29,7 +29,7 @@ const StyledHeader = styled.header`
 export default class Header extends Component {
     
     defaultHeight = globalVars.defaultHeaderHeight;
-    minHeight = globalVars.minHeaderHeightMobile;
+    minHeight = globalVars.minHeaderHeightSmall;
 
     constructor() {
         super();
@@ -59,7 +59,7 @@ export default class Header extends Component {
     }
 
     setMinHeight() {
-        this.minHeight = this.checkWidth() ? globalVars.minHeaderHeightDesktop : globalVars.minHeaderHeightMobile;
+        this.minHeight = this.checkWidth() ? globalVars.minHeaderHeightLarge : globalVars.minHeaderHeightSmall;
         this.setHeight();
     }
 

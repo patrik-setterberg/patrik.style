@@ -3,13 +3,14 @@ import {createGlobalStyle} from 'styled-components';
 const globalVars = {
     
     // Header
-    minHeaderHeightMobile: 74, // px
-    minHeaderHeightDesktop: 100, //px
-    defaultHeaderHeight: 500, // px
+    minHeaderHeightSmall: 74, // px
+    minHeaderHeightLarge: 95, //px
+    defaultHeaderHeight: 400, // px
     headerOpenHeight: 500, // px
     
     // Container
-    containerWidth: 66 // %
+    containerWidthMedium: 700,
+    containerWidthLarge: 'min(60%, 1200px)',
 }
 
 export {globalVars};
@@ -26,10 +27,21 @@ const GlobalStyle = createGlobalStyle`
     @media only screen and (min-width: 768px) {
         :root {
             --header-open-height: ${globalVars.headerOpenHeight}px;
-            --container-width: ${globalVars.containerWidth}%;
         }
     }
 
+    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+        :root {
+            --container-width: ${globalVars.containerWidthMedium}px;
+        }
+    }
+
+    @media only screen and (min-width: 1300px) {
+        :root {
+            --container-width: ${globalVars.containerWidthLarge};
+        }
+    }
+        
     * {
         margin: 0;
         padding: 0;

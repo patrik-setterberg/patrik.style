@@ -23,10 +23,6 @@ const MenuWrapper = styled.div`
 `
 
 export default class Menu extends Component {
-    constructor(props) {
-        super();
-    }
-
 
     render() {
         return(

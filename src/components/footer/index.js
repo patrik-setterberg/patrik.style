@@ -15,10 +15,6 @@ const FooterContainer = styled.div`
 `
 
 export default class Footer extends Component {
-    constructor() {
-        super();
-        this.state = {}
-    }
 
     render() {
         return(
