@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 import Menu from './components/menu';
 import Brand from './components/brand';
+import DarkToggle from './dark_mode_toggler';
 import {globalVars} from '../../globals.js'
 
 const StyledHeader = styled.header`
@@ -106,6 +107,7 @@ export default class Header extends Component {
                     open={this.state.open}
                 />
                 <Brand open={this.state.open} />
+                <DarkToggle />
             </StyledHeader>
         );   
     }
