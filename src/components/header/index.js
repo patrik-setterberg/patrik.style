@@ -47,7 +47,7 @@ export default class Header extends Component {
         // has a transition it interferes with the header's scroll-dependent
         // auto resizing.
         !this.state.open ?
-            this.setState({transition: 'height 0.2s cubic-bezier(0.77,0.2,0.05,1.0)'}) :
+            this.setState({transition: 'height 0.25s cubic-bezier(0.77,0.2,0.05,1.0)'}) :
             setTimeout(() => {this.setState({transition: 'unset'})}, 30); // send help
 
         this.setState({
@@ -56,7 +56,7 @@ export default class Header extends Component {
     }
 
     checkWidth() {
-        return window.innerWidth > 768;
+        return window.innerWidth > 768; // possibly store in variable
     }
 
     setMinHeight() {
@@ -107,7 +107,7 @@ export default class Header extends Component {
                     open={this.state.open}
                 />
                 <Brand open={this.state.open} />
-                <DarkToggle />
+                <DarkToggle open={this.state.open}/>
             </StyledHeader>
         );   
     }

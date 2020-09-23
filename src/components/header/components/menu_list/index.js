@@ -9,11 +9,11 @@ const StyledMenuList = styled.ul`
     top: 5rem;
     padding-right: 2rem;
     transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
+    transform: translateX(-100%);
     opacity: 0;
     transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     ${props => props.open && css`
-        transform: translate(0%, 0%);
+        transform: translateX(0%);
         opacity: 1;`
     }
 

@@ -47,6 +47,17 @@ const Label = styled.label`
         transition: left 0.2s cubic-bezier(0.77,0.2,0.05,1.0), transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     }
 
+    @media only screen and (min-width: 768px) {
+        height: 32px;
+        width: 64px;
+        line-height: 2.1;
+
+        &::after {
+            height: 28px;
+            width: 28px;
+        }
+    }
+
 `
 
 export default class ToggleSwitch extends Component {
