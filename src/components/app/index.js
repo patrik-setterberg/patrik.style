@@ -17,11 +17,6 @@ class App extends Component {
     });
   }
 
-  componentWillUnmount() {
-    document.body.removeEventListener('mousedown');
-    document.body.removeEventListener('keydown');
-  }
-
   render() {
     return(
       <>

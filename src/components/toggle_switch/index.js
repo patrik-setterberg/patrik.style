@@ -38,6 +38,7 @@ const Label = styled.label`
     position: absolute;
     right: 0.5rem;
     top: 0;
+    transition: box-shadow 1.2s ease-in-out;
 
     &::after {
         content: '';
@@ -49,6 +50,10 @@ const Label = styled.label`
         border-radius: 50%;
         background: white;
         transition: left 0.2s cubic-bezier(0.77,0.2,0.05,1.0), transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    &:hover {
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
     }
 
     @media only screen and (min-width: 768px) {

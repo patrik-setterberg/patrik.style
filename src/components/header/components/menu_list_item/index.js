@@ -11,7 +11,7 @@ const StyledMenuListItem = styled.li`
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 1.4px;
-        transition: letter-spacing 0.2s cubic-bezier(0.77,0.2,0.05,1.0), color 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+        transition: letter-spacing 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     }
     
     & a::after,
@@ -22,22 +22,22 @@ const StyledMenuListItem = styled.li`
         left: 0;
         height: 2px;
         width: 0;
-        background: #FFEAD0;
+        background: #FFF;
         border-radius: 2px;
-        transition: width 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+        transition: width 0.2s cubic-bezier(0.77,0.2,0.05,1.0), box-shadow 1.5s ease-in-out;
     }
 
     & a:hover,
     & a:focus {
         outline: none;
         letter-spacing: 1.8px;
-        color: #FFF;
-        transition: letter-spacing 0.2s cubic-bezier(0.77,0.2,0.05,1.0), color 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+        transition: letter-spacing 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     }
 
     & a:hover::after,
     & a:focus::after {
         width: 100%;
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
     }
 
     @media only screen and (min-width: 768px) {

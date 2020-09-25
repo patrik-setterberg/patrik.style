@@ -111,12 +111,6 @@ export default class Header extends Component {
             }
         }.bind(this));
     }
-    
-    componentWillUnmount() {
-        window.removeEventListener('scroll');
-        window.removeEventListener('resize');
-        window.removeEventListener('keydown');
-    }
 
     /* maybe a utilities folder somewhere...
     checkReducedMotion() {
