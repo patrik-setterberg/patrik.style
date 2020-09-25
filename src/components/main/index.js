@@ -9,6 +9,10 @@ const StyledMain = styled.main`
 `
 
 const StyledContainer = styled(Container)`
+    
+    /* a bunch of temp styles */
+    min-height: 1200px;
+
     & p + p {
         margin-top: 1rem;
     }
@@ -28,8 +32,26 @@ export default class Main extends Component {
         this.state = {}
     }
 
+    
+
+    // move elsewhere if possible
+    componentDidMount() {
+
+        document.body.addEventListener('mousedown', function() {
+            document.body.classList.add('no-outline');
+          });
+
+        document.body.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+              document.body.classList.remove('no-outline');
+            }
+          });
+
+    }
+
     render() {
         return(
+            <>
             <StyledMain>
                 <StyledContainer>
                     <h3>React is fun.</h3>
@@ -40,6 +62,7 @@ export default class Main extends Component {
                     <p>Volutpat lacus laoreet non curabitur gravida arcu.</p>
                 </StyledContainer>
             </StyledMain>
+            </>
         );
     }
 }

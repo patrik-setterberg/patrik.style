@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
         --container-width: auto;
         --header-open-height: 100vh;
         --main-margin-top: ${globalVars.defaultHeaderHeight}px;
+
+        --default-outline: 2px dashed white;
     }
 
     @media only screen and (min-width: 768px) {
@@ -59,6 +61,11 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Nunito Sans', sans-serif;
         height: 100%;
         color: var(--text-color);
+    }
+
+    body.no-outline:focus,
+    body.no-outline *:focus ~ * {
+        outline: none !important;
     }
 `
 

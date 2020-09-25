@@ -7,6 +7,7 @@ import {globalVars} from '../../globals.js'
 
 const StyledHeader = styled.header`
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     background: linear-gradient(to bottom, #283a42, #37505C, #283a42);
@@ -15,11 +16,32 @@ const StyledHeader = styled.header`
     box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
-    /* transition: height 0.2s cubic-bezier(0.77,0.2,0.05,1.0); */
+
+    @media only screen and (min-width: 768px) {
+        transform-style: preserve-3d;
+
+        &::after {
+            content: '';
+            top: 0;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            transform:translateZ(-1px);
+            pointer-events: none;
+            background: #24333a;
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+    }
 
     ${props => props.open && css`
-        z-index: 3;
-        height: var(--header-open-height) !important;`
+        height: var(--header-open-height) !important;
+        
+        @media only screen and (min-width: 768px) {
+            &::after {
+                opacity: 0.4;
+            }  
+        }`
     }
 
     @media only screen and (max-width: 767px) {

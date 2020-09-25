@@ -27,13 +27,16 @@ const StyledMenuListItem = styled.li`
         transition: width 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     }
 
-    & a:hover {
+    & a:hover,
+    & a:focus {
+        outline: none;
         letter-spacing: 1.8px;
         color: #FFF;
         transition: letter-spacing 0.2s cubic-bezier(0.77,0.2,0.05,1.0), color 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     }
 
-    & a:hover::after {
+    & a:hover::after,
+    & a:focus::after {
         width: 100%;
     }
 

@@ -28,10 +28,6 @@ const StyledHamburger = styled.div`
         transform: rotate(45deg) translate(0, -1px);
     }
 
-    & input:focus {
-        outline: 2px solid yellow;
-    }
-
     & span {
         display: block;
         width: 38px;
@@ -52,6 +48,25 @@ const StyledHamburger = styled.div`
 
     & span:nth-last-child(3) {
         transform-origin: 0 100%;
+    }
+
+    & div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        transition: width 0.2s cubic-bezier(0.77,0.2,0.05,1.0)
+    }
+
+    & input:focus ~ div {
+        outline: var(--default-outline);
+        outline-offset: 5px;
+    }
+
+    & input:checked ~ div {
+        width: 77%;
     }
 
     @media only screen and (min-width: 768px) {
@@ -87,6 +102,7 @@ export default class Hamburger extends Component {
                     id="menu-checkbox"
                     onChange={() => this.props.toggleOpen()}
                 />
+                <div></div>
                 <span></span>
                 <span></span>
                 <span></span>

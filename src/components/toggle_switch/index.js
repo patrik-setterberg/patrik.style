@@ -8,13 +8,15 @@ import styled, {css} from 'styled-components';
 */
 
 const Input = styled.input`
-    display: none;
 
-    &:checked ~ label {
-        
+    opacity: 0;
+
+    &:focus ~ label {
+        outline: var(--default-outline);
+        outline-offset: 5px;
     }
 
-    &:checked ~ label::after {
+    &:checked + label::after {
         left: calc(100% - 2px);
         transform: translateX(-100%);
     }
@@ -33,7 +35,9 @@ const Label = styled.label`
     font-weight: 600;
     text-transform: uppercase;
     color: #FFEAD0;
-    position: relative;
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
 
     &::after {
         content: '';

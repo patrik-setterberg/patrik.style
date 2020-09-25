@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 
 const StyledBrand = styled.div`
-    width: max-content;
-    margin: 0 auto;
+    width: 100%;
+    margin-left: -38px; /* width of menu */
+    
+    @media only screen and (min-width: 768px) {
+        margin-left: -44px;
+    }
 `
 
 const H1 = styled.h1`
@@ -11,22 +15,21 @@ const H1 = styled.h1`
     font-weight: 300;
     font-family: 'Nunito', sans-serif;
     font-size: 38px;
-    /*margin-left: max(calc(17% - 1.5rem), 60px);*/
-    margin-left: -44px;
+    text-align: center;
     opacity: 1;
-    transition: margin-left 0.2s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
-    ${props => props.open && css`
-        /*margin-left: max(250px, calc(17% - 24px));    */
-    
-        @media only screen and (max-width: 767px) {
-            opacity: 0;    
-        }`
-    }
+    transition: opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
 
     & span {
         font-weight: 600;
         letter-spacing: 1.4px;
         color: #fff;
+    }
+
+    @media only screen and (min-width: 768px) {
+        & span {
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            transition: text-shadow 1s ease-in-out;
+        }
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1199px) {
@@ -43,6 +46,19 @@ const H1 = styled.h1`
         & span {
             letter-spacing: 2px;
         }
+    }
+
+    ${props => props.open && css`
+    
+        @media only screen and (max-width: 767px) {
+            opacity: 0;    
+        }
+        
+        @media only screen and (min-width: 768px) {
+            & span {
+                text-shadow: 0 0 9px rgba(255, 255, 255, 0.4);
+            }
+        }`
     }
 `
 
