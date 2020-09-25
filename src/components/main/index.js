@@ -32,23 +32,6 @@ export default class Main extends Component {
         this.state = {}
     }
 
-    
-
-    // move elsewhere if possible
-    componentDidMount() {
-
-        document.body.addEventListener('mousedown', function() {
-            document.body.classList.add('no-outline');
-          });
-
-        document.body.addEventListener('keydown', function(event) {
-            if (event.key === 'Tab') {
-              document.body.classList.remove('no-outline');
-            }
-          });
-
-    }
-
     render() {
         return(
             <>

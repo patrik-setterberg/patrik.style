@@ -11,7 +11,7 @@ const StyledMenuList = styled.ul`
     transform-origin: 0% 0%;
     transform: translateX(-100%);
     opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: transform 0.25s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
     ${props => props.open && css`
         transform: translateX(0%);
         opacity: 1;`
@@ -45,7 +45,7 @@ function MenuList(props) {
 
     return(
         <StyledMenuList {...props}>
-            {links.map((link, i) => <MenuListItem page={link} key={i} />)}
+            {links.map((link, i) => <MenuListItem open={props.open} page={link} key={i} />)}
         </StyledMenuList>
     );
 }

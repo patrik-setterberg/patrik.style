@@ -1,17 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from '../header';
 import Main from '../main';
 import Footer from '../footer';
 
-function App() {
+class App extends Component {
 
-  return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
+  componentDidMount() {
+    document.body.addEventListener('mousedown', function() {
+      document.body.classList.add('no-outline');
+    });
+
+    document.body.addEventListener('keydown', function(event) {
+        if (event.key === 'Tab') {
+          document.body.classList.remove('no-outline');
+        }
+    });
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('mousedown');
+    document.body.removeEventListener('keydown');
+  }
+
+  render() {
+    return(
+      <>
+        <Header />
+        <Main />
+        <Footer />
+      </>
+    );
+  }
+  
 }
 
 export default App;

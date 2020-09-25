@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 
 /* 
@@ -74,7 +74,7 @@ export default class ToggleSwitch extends Component {
         return(
             <div className={this.props.className}>
                 <Input type="checkbox" id={this.props.Id || 'toggle_switch'} />
-                <Label for={this.props.Id || 'toggle_switch'}>{this.props.text || 'Toggle'}</Label>
+                <Label htmlFor={this.props.Id || 'toggle_switch'}>{this.props.text || 'Toggle'}</Label>
             </div>
         );
     }

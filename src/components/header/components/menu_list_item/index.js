@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const StyledMenuListItem = styled.li`
@@ -48,12 +48,39 @@ const StyledMenuListItem = styled.li`
     }
 `
 
-function MenuListItem(props) {
-    return(
-        <StyledMenuListItem>
-            <a href={props.page.url}>{props.page.title}</a>
-        </StyledMenuListItem>
-    );
-}
+export default class MenuListItem extends Component {
 
-export default MenuListItem;
+    constructor(props) {
+        super();
+        this.state = {
+            keyboardNav: false,
+        };
+    }
+
+    componentDidUpdate(prevprops) {
+        if(this.props.open !== prevprops.open) {
+            if (this.props.open === false) {
+                this.setState({
+                    keyboardNav: false
+                });
+            } else {
+                this.setState({
+                    keyboardNav: true
+                });
+            }
+        }
+    }
+
+    render() {
+        return(
+            <StyledMenuListItem open={this.props.open}>
+                <a
+                    href={this.props.page.url}
+                    tabIndex={this.state.keyboardNav ? '0' : '-1'}
+                >
+                    {this.props.page.title}
+                </a>
+            </StyledMenuListItem>
+        );
+    }
+}

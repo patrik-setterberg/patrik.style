@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
             pointer-events: none;
             background: #24333a;
             opacity: 0;
-            transition: opacity 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+            transition: opacity 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
         }
     }
 
@@ -102,11 +102,20 @@ export default class Header extends Component {
         this.setMinHeight();
         window.addEventListener('scroll', this.setHeight.bind(this));
         window.addEventListener('resize', this.setMinHeight.bind(this));
+
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && this.state.open === true) {
+              this.toggleOpen();
+
+              document.getElementById('menu-checkbox').checked = false;
+            }
+        }.bind(this));
     }
     
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.setHeight.bind(this));
-        window.removeEventListener('resize', this.setMinHeight.bind(this));
+        window.removeEventListener('scroll');
+        window.removeEventListener('resize');
+        window.removeEventListener('keydown');
     }
 
     /* maybe a utilities folder somewhere...

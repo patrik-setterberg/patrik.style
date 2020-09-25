@@ -9,7 +9,7 @@ const StyledToggler = styled(ToggleSwitch)`
     right: 1.5rem;
     transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: transform 0.25s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
     ${props => props.open && css`
         transform: translateX(0%);
         opacity: 1;`
