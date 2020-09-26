@@ -33,13 +33,13 @@ const StyledHamburger = styled.div`
         width: 38px;
         height: 4px;
         margin-bottom: 8px;
-        background: #FFEAD0;
+        background: var(--color-cream);
         position: relative;
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px -1px;
-        transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.25s ease-out;
+        transition: transform 0.3s var(--default-timing),
+                opacity 0.2s var(--default-timing);
     }
 
     & span:first-child {
@@ -57,7 +57,7 @@ const StyledHamburger = styled.div`
         top: 0;
         left: 0;
         pointer-events: none;
-        transition: width 0.2s cubic-bezier(0.77,0.2,0.05,1.0)
+        transition: width 0.2s var(--default-timing);
     }
 
     & input:focus ~ div {

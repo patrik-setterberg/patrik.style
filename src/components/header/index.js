@@ -10,9 +10,9 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    background: linear-gradient(to bottom, #283a42, #37505C, #283a42);
+    background: linear-gradient(to bottom, var(--color-dark-cyan-02), var(--color-dark-cyan-01), var(--color-dark-cyan-02));
     flex: 0 0 auto;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--almost-black);
     box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
@@ -28,9 +28,9 @@ const StyledHeader = styled.header`
             height: 100vh;
             transform:translateZ(-1px);
             pointer-events: none;
-            background: #24333a;
+            background: var(--color-dark-cyan-03);
             opacity: 0;
-            transition: opacity 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
+            transition: opacity 0.25s var(--default-timing);
         }
     }
 
@@ -69,7 +69,7 @@ export default class Header extends Component {
         // has a transition it interferes with the header's scroll-dependent
         // auto resizing.
         !this.state.open ?
-            this.setState({transition: 'height 0.25s cubic-bezier(0.77,0.2,0.05,1.0)'}) :
+            this.setState({transition: 'height 0.25s var(--default-timing'}) :
             setTimeout(() => {this.setState({transition: 'unset'})}, 30); // send help
 
         this.setState({

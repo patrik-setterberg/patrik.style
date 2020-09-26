@@ -5,11 +5,11 @@ import ToggleSwitch from '../../toggle_switch';
 const StyledToggler = styled(ToggleSwitch)`
     display: block;
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: var(--default-padding);
+    right: var(--default-padding);
     transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.25s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: transform 0.25s var(--default-timing), opacity 0.25s var(--default-timing);
     ${props => props.open && css`
         transform: translateX(0%);
         opacity: 1;`
@@ -20,11 +20,10 @@ const StyledToggler = styled(ToggleSwitch)`
     }
 
     & label::after {
-        background: linear-gradient(to bottom, #2e434c, #314852);
+        background: var(--color-dark-cyan-01);
     }
 
     @media only screen and (min-width: 768px) {
-        top: 2rem;
         right: 2.5rem;
     }
 `

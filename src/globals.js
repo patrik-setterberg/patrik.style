@@ -18,17 +18,35 @@ export {globalVars};
 
 const GlobalStyle = createGlobalStyle`    
     :root {
-        --text-color: #333;
         --container-width: auto;
         --header-open-height: 100vh;
         --main-margin-top: ${globalVars.defaultHeaderHeight}px;
 
+
+        --default-padding: 1.5rem;
+
         --default-outline: 2px dashed white;
+
+        --default-timing: cubic-bezier(0.78, 0.2, 0.05, 1.0);
+
+        // COLORS
+        --color-dark-cyan-01: #37505C;
+        --color-dark-cyan-02: #283a42;
+        --color-dark-cyan-03: #24333a;
+        
+        --color-almost-black: #333;
+        --color-gray: #444;
+        --color-cream: #ffead0;
+
+        --text-color: var(--color-almost-black);
+
+    
     }
 
     @media only screen and (min-width: 768px) {
         :root {
             --header-open-height: ${globalVars.headerOpenHeight}px;
+            --default-padding: 2rem;
         }
     }
 

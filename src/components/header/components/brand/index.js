@@ -11,18 +11,18 @@ const StyledBrand = styled.div`
 `
 
 const H1 = styled.h1`
-    color: #FFEAD0;
+    color: var(--color-cream);
     font-weight: 300;
     font-family: 'Nunito', sans-serif;
     font-size: 38px;
     text-align: center;
     opacity: 1;
-    transition: opacity 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: opacity 0.2s var(--default-timing);
 
     & span {
         font-weight: 600;
         letter-spacing: 1.4px;
-        color: #fff;
+        color: var(--color-white);
     }
 
     @media only screen and (min-width: 768px) {

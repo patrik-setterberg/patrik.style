@@ -28,13 +28,13 @@ const Label = styled.label`
     width: 56px;
     border-radius: 28px;
     cursor: pointer;
-    background: #FFEAD0;
+    background: var(--color-cream);
     text-indent: -80px;
     font-size: 1rem;
     line-height: 1.875;
     font-weight: 600;
     text-transform: uppercase;
-    color: #FFEAD0;
+    color: var(--color-cream);
     position: absolute;
     right: 0.5rem;
     top: 0;
@@ -49,7 +49,7 @@ const Label = styled.label`
         width: 24px;
         border-radius: 50%;
         background: white;
-        transition: left 0.2s cubic-bezier(0.77,0.2,0.05,1.0), transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+        transition: left 0.2s var(--default-timing), transform 0.2s var(--default-timing);
     }
 
     &:hover {

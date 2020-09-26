@@ -11,15 +11,10 @@ const Nav = styled.nav`
 const MenuWrapper = styled.div`
     display: block;
     position: relative;
-    top: 1.5rem;
-    left: 1.5rem;
+    top: var(--default-padding);
+    left: var(--default-padding);
     z-index: 1;
     user-select: none;
-
-    @media only screen and (min-width: 768px) {
-        top: 2rem;
-        left: 2rem;
-    }
 `
 
 export default class Menu extends Component {
