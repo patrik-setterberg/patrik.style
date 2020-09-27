@@ -5,13 +5,12 @@ import Container from '../container';
 const StyledMain = styled.main`
     flex: 1 1 auto;
     margin-top: var(--main-margin-top);
-    padding: 0 0.75rem;
 `
 
 const StyledContainer = styled(Container)`
     
     /* a bunch of temp styles */
-    min-height: 1200px;
+    min-height: 1000px;
 
     & p + p {
         margin-top: 1rem;

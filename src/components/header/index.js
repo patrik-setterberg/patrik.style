@@ -10,7 +10,8 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    background: linear-gradient(to bottom, var(--color-dark-cyan-02), var(--color-dark-cyan-01), var(--color-dark-cyan-02));
+    background: var(--color-dark-blue);
+    /*background: linear-gradient(to bottom, var(--color-dark-cyan-02), var(--color-dark-cyan-01), var(--color-dark-cyan-02));*/
     flex: 0 0 auto;
     border-bottom: 2px solid var(--almost-black);
     box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.4);
@@ -28,7 +29,7 @@ const StyledHeader = styled.header`
             height: 100vh;
             transform:translateZ(-1px);
             pointer-events: none;
-            background: var(--color-dark-cyan-03);
+            background: var(--color-gray);
             opacity: 0;
             transition: opacity 0.25s var(--default-timing);
         }

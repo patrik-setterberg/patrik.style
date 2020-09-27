@@ -5,8 +5,8 @@ const globalVars = {
     // Header
     minHeaderHeightSmall: 74, // px
     minHeaderHeightLarge: 95, //px
-    defaultHeaderHeight: 400, // px
-    headerOpenHeight: 500, // px
+    defaultHeaderHeight: 500, // px
+    headerOpenHeight: 600, // px
     
     // Container
     containerWidthMedium: 700,
@@ -33,10 +33,13 @@ const GlobalStyle = createGlobalStyle`
         --color-dark-cyan-01: #37505C;
         --color-dark-cyan-02: #283a42;
         --color-dark-cyan-03: #24333a;
+
+        --color-dark-blue: #2E343C;
         
         --color-almost-black: #333;
         --color-gray: #444;
         --color-cream: #ffead0;
+        --color-white: #fff;
 
         --text-color: var(--color-almost-black);
 

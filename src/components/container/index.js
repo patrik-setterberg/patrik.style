@@ -4,11 +4,7 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
     width: var(--container-width);
     margin: 0 auto;
-    padding: 60px 0.75rem 0 0.75rem;
-
-    @media only screen and (max-width: 767px) {
-        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
-    }
+    padding: 100px var(--default-padding);
 `
 
 export default function Container({children, className}) {

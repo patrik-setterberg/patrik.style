@@ -20,7 +20,7 @@ const StyledToggler = styled(ToggleSwitch)`
     }
 
     & label::after {
-        background: var(--color-dark-cyan-01);
+        background: var(--color-dark-blue);
     }
 
     @media only screen and (min-width: 768px) {
