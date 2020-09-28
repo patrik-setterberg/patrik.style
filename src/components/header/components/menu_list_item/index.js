@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import {toggleTabIndex} from '../../../../utils/utils.js';
 
 const StyledMenuListItem = styled.li`
      a {

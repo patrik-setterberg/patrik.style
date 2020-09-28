@@ -32,7 +32,11 @@ export default class DarkToggle extends Component {
 
     render() {
         return(
-            <StyledToggler open={this.props.open} Id="darkToggler" text="Dark mode"/>
+            <StyledToggler
+                open={this.props.open}
+                Id="darkToggler"
+                text="Dark mode"
+            />
         );
     }
 }

@@ -79,7 +79,7 @@ export default class Header extends Component {
     }
 
     checkWidth() {
-        return window.innerWidth > 768; // possibly store in variable
+        return window.innerWidth > 767; // possibly store in variable
     }
 
     setMinHeight() {

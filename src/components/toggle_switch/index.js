@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-
+import {toggleTabIndex} from '../../utils/utils.js';
 
 /* 
    ToggleSwitch
@@ -73,13 +73,26 @@ export default class ToggleSwitch extends Component {
 
     constructor(props) {
         super();
+        this.state = {
+            keyboardNav: false,
+        };
+    }
+
+    componentDidUpdate(prevprops) {
+        toggleTabIndex(this, prevprops);
     }
 
     render() {
         return(
             <div className={this.props.className}>
-                <Input type="checkbox" id={this.props.Id || 'toggle_switch'} />
-                <Label htmlFor={this.props.Id || 'toggle_switch'}>{this.props.text || 'Toggle'}</Label>
+                <Input
+                    type="checkbox"
+                    id={this.props.Id || 'toggle_switch'} 
+                    tabIndex={this.state.keyboardNav ? '0' : '-1'}
+                />
+                <Label htmlFor={this.props.Id || 'toggle_switch'}>
+                    {this.props.text || 'Toggle'}
+                </Label>
             </div>
         );
     }

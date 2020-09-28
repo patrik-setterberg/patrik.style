@@ -34,7 +34,7 @@ const TextLink = styled.a`
     }
 `
 
-function Contact(props) {
+function Contact() {
 
     const email = {
         address: 'contact@patrik.style',
