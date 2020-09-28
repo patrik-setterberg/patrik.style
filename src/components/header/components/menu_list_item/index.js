@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {toggleTabIndex} from '../../../../utils/utils.js';
+import {updateKeyboardNavState} from '../../../../utils/utils.js';
 
 const StyledMenuListItem = styled.li`
      a {
@@ -59,17 +59,7 @@ export default class MenuListItem extends Component {
     }
 
     componentDidUpdate(prevprops) {
-        if(this.props.open !== prevprops.open) {
-            if (this.props.open === false) {
-                this.setState({
-                    keyboardNav: false
-                });
-            } else {
-                this.setState({
-                    keyboardNav: true
-                });
-            }
-        }
+        updateKeyboardNavState(this, prevprops);
     }
 
     render() {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {toggleTabIndex} from '../../utils/utils.js';
+import {updateKeyboardNavState} from '../../utils/utils.js';
 
 /* 
    ToggleSwitch
@@ -79,7 +79,7 @@ export default class ToggleSwitch extends Component {
     }
 
     componentDidUpdate(prevprops) {
-        toggleTabIndex(this, prevprops);
+        updateKeyboardNavState(this, prevprops);
     }
 
     render() {

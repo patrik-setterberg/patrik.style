@@ -13,6 +13,7 @@ const StyledTopLink = styled.div`
         color: var(--color-cream);
         text-decoration: none;
         padding: 0.5rem;
+        letter-spacing: 1px;
 
         &::before,
         &::after {
@@ -22,7 +23,9 @@ const StyledTopLink = styled.div`
         }
 
         &:hover::before,
-        &:hover::after {
+        &:hover::after,
+        &:focus::before,
+        &:focus::after {
             opacity: 1;
         }
 
@@ -34,6 +37,10 @@ const StyledTopLink = styled.div`
         &::after {
             content: 'the top';
             margin-left: 1rem;
+        }
+
+        &:focus {
+            outline: var(--default-outline);
         }
     }
 

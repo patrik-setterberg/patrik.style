@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import FooterIcon from '../footer_icon';
 
@@ -13,24 +13,34 @@ const ContactWrapper = styled.div`
 
 const IconLinkContainer = styled.div`
     display: flex;
+    padding-top: var(--icon-size);
+    margin-top: var(--icon-size);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
 `
 
 const IconLink = styled.a`
     display: inline-flex;
     margin-right: var(--icon-size);
+    
+    &:focus {
+        outline: var(--default-outline);
+        outline-offset: 4px;
+    }
 `
 
 const TextLink = styled.a`
     &, 
     &:visited {
-        display: block;
+        display: inline-block;
         color: var(--color-white);
         text-decoration: none;
         font-size: 1rem;
         line-height: var(--icon-size);
-        padding-bottom: var(--icon-size);
-        margin-bottom: var(--icon-size);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    &:focus {
+        outline: var(--default-outline);
+        outline-offset: 3px;
     }
 `
 
