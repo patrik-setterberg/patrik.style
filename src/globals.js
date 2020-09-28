@@ -22,11 +22,9 @@ const GlobalStyle = createGlobalStyle`
         --header-open-height: 100vh;
         --main-margin-top: ${globalVars.defaultHeaderHeight}px;
 
-
-        --default-padding: 1.5rem;
-
-        --default-outline: 2px dashed white;
-
+        --default-padding: 1.5rem;  /* 24px */
+        --default-font-size: 1.125rem; /* 18px */
+        --default-outline: 2px dashed var(--color-white);
         --default-timing: cubic-bezier(0.78, 0.2, 0.05, 1.0);
 
         // COLORS

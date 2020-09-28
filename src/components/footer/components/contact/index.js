@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FooterIcon from '../footer_icon';
+import TextLink from '../text_link';
 
 const ContactWrapper = styled.div`
     margin-top: var(--default-padding);
@@ -28,22 +29,6 @@ const IconLink = styled.a`
     }
 `
 
-const TextLink = styled.a`
-    &, 
-    &:visited {
-        display: inline-block;
-        color: var(--color-white);
-        text-decoration: none;
-        font-size: 1rem;
-        line-height: var(--icon-size);
-    }
-
-    &:focus {
-        outline: var(--default-outline);
-        outline-offset: 3px;
-    }
-`
-
 function Contact() {
 
     const email = {
@@ -67,11 +52,10 @@ function Contact() {
     return(
         <ContactWrapper>
             <TextLink
-                href={`mailto:${email.address}`}
+                url={`mailto:${email.address}`}
                 title={email.title}
-            >
-                {email.address}
-            </TextLink>
+                text={email.address}
+            />
             <IconLinkContainer>
                 {socialLinks.map((link, i) =>
                     <IconLink 

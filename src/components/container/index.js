@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
     width: var(--container-width);
     margin: 0 auto;
-    padding: 100px var(--default-padding);
+    padding: 4rem var(--default-padding);
 `
 
 export default function Container({children, className}) {

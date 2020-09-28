@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TextLink from '../text_link';
 
 const LegalStuff = styled.div`
     margin-top: calc(var(--default-padding) * 2);
@@ -21,18 +22,52 @@ const Copyright = styled.span`
 `
 
 const Policies = styled.div`
-    font-size: 1rem;
+    font-size: var(--default-font-size);
     line-height: var(--icon-size);
+
+    & span {
+        color: var(--color-cream);
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+        & span {
+            display: none;
+        }
+    }
 `
 
 function Legal() {
+
+    const legalLinks = {
+        privacy: {
+            url: '#privacy',
+            title: 'Read privacy policy',
+            text: 'Privacy policy'
+        },
+        cookies: {
+            url: '#cookies',
+            title: 'Read about why and how I use cookies on this site',
+            text: 'Cookie policy'
+        }
+    };
+
     return(
         <LegalStuff>
             <Copyright>
                 © 2020 | Patrik Setterberg
             </Copyright>
             <Policies>
-                <span>Privacy policy</span> <span>|</span> <span>Cookie Policy</span>
+                <TextLink
+                    url={legalLinks.privacy.url}
+                    title={legalLinks.privacy.title}
+                    text={legalLinks.privacy.text}
+                />
+                <span> | </span>
+                <TextLink
+                    url={legalLinks.cookies.url}
+                    title={legalLinks.cookies.title}
+                    text={legalLinks.cookies.text}
+                />
             </Policies>
         </LegalStuff>
     );
