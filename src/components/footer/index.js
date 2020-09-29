@@ -26,7 +26,8 @@ const FooterContainer = styled.div`
     margin: 0 auto;
     padding-left: var(--default-padding);
     padding-right: var(--default-padding);
-    color: var(--color-cream);
+    color: var(--color-white);
+    letter-spacing: 0.8px;
 
     @media only screen and (min-width: 768px) {
         flex-direction: row;

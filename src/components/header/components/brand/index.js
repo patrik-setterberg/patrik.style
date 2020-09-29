@@ -17,7 +17,7 @@ const H1 = styled.h1`
     font-size: 38px;
     text-align: center;
     opacity: 1;
-    transition: opacity 0.2s var(--default-timing);
+    transition: opacity 0.2s var(--default-timing), font-size 0.2s var(--default-timing);
 
     & span {
         font-weight: 600;
@@ -32,7 +32,7 @@ const H1 = styled.h1`
         }
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    @media only screen and (min-width: 768px) and (max-width: 1299px) {
         font-size: 44px;
         
         & span {
@@ -40,7 +40,7 @@ const H1 = styled.h1`
         }
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1300px) {
         font-size: 56px;
 
         & span {

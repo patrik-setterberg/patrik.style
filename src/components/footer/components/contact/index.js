@@ -7,7 +7,7 @@ const ContactWrapper = styled.div`
     margin-top: var(--default-padding);
 
     @media only screen and (min-width: 768px) {
-        width: 30%;
+        width: 32%;
         margin-top: 0;    
     }
 `

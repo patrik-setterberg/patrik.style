@@ -5,6 +5,8 @@ import FooterIcon from '../footer_icon';
 const StyledTopLink = styled.div`
     display: flex;
     justify-content: center;
+    max-height: 64px;
+    margin-top: 1rem;
 
 
     & a {
@@ -39,13 +41,17 @@ const StyledTopLink = styled.div`
             margin-left: 1rem;
         }
 
-        &:focus {
+        &:focus:not(:active) {
             outline: var(--default-outline);
         }
     }
 
     @media only screen and (max-width: 767px) {
         order: -1;
+    }
+    
+    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+        margin-bottom: var(--icon-size);
     }
 `
 

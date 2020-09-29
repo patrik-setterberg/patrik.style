@@ -7,8 +7,8 @@ const LegalStuff = styled.div`
 
     @media only screen and (min-width: 768px) {
         margin-top: 0;
-        width: 30%;
         text-align: right;
+        width: 32%;
     }
 `
 
@@ -26,12 +26,33 @@ const Policies = styled.div`
     line-height: var(--icon-size);
 
     & span {
-        color: var(--color-cream);
+        color: var(--color-white);
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+    @media only screen and (min-width: 768px) and (max-width: 1499px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        & a {
+            width: fit-content;
+        }
+        
+        
         & span {
             display: none;
+        }
+
+        /*& a:first-of-type {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+        }*/
+    }
+
+    @media only screen and (min-width: 1500px) {
+        & span {
+
         }
     }
 `

@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
         --default-padding: 1.5rem;  /* 24px */
         --default-font-size: 1.125rem; /* 18px */
-        --default-outline: 2px dashed var(--color-white);
+        --default-outline: 2px dashed rgba(255, 255, 255, 0.6);
         --default-timing: cubic-bezier(0.78, 0.2, 0.05, 1.0);
 
         // COLORS
@@ -85,6 +85,11 @@ const GlobalStyle = createGlobalStyle`
     body.no-outline:focus,
     body.no-outline *:focus ~ * {
         outline: none !important;
+    }
+
+    *:active,
+    *:active ~ * {
+        outline: none;
     }
 `
 

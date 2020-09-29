@@ -5,11 +5,13 @@ const StyledLink = styled.a`
     &, 
     &:visited {
         display: inline-block;
-        color: var(--color-white);
+        color: var(--color-cream);
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 15px;
         line-height: var(--icon-size);
+        letter-spacing: 1px;
         text-transform: uppercase;
+        font-weight: 600;
     }
 
     &:focus {

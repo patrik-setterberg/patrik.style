@@ -15,6 +15,8 @@ const MenuWrapper = styled.div`
     left: var(--default-padding);
     z-index: 1;
     user-select: none;
+    transition: top 0.2s var(--default-timing),
+        left 0.2s var(--default-timing);
 `
 
 export default class Menu extends Component {

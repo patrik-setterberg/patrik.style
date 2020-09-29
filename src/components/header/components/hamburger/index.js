@@ -28,6 +28,12 @@ const StyledHamburger = styled.div`
         transform: rotate(45deg) translate(0, -1px);
     }
 
+    & label {
+        position: absolute;
+        color: yellow;
+        opacity: 0;
+    }
+
     & span {
         display: block;
         width: 38px;
@@ -39,7 +45,10 @@ const StyledHamburger = styled.div`
         z-index: 1;
         transform-origin: 4px -1px;
         transition: transform 0.3s var(--default-timing),
-                opacity 0.2s var(--default-timing);
+                opacity 0.2s var(--default-timing),
+                height 0.2s var(--default-timing),
+                width 0.2s var(--default-timing),
+                margin-bottom 0.2s var(--default-timing);
     }
 
     & span:first-child {
@@ -97,9 +106,11 @@ export default class Hamburger extends Component {
     render() {
         return(
             <StyledHamburger>
+                <label htmlFor="menu-checkbox">Menu</label>
                 <input
                     type="checkbox"
                     id="menu-checkbox"
+                    title="Menu"
                     onChange={() => this.props.toggleOpen()}
                 />
                 <div></div>
