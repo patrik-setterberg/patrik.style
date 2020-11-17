@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
 import ToggleSwitch from '../../toggle_switch';
+import g from '../../../globals.js';
 
 const StyledToggler = styled(ToggleSwitch)`
     display: block;
@@ -23,7 +24,7 @@ const StyledToggler = styled(ToggleSwitch)`
         background: var(--color-dark-blue);
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         right: 2.5rem;
     }
 `

@@ -3,7 +3,8 @@ import styled, {css} from 'styled-components';
 import Menu from './components/menu';
 import Brand from './components/brand';
 import DarkToggle from './dark_mode_toggler';
-import {globalVars} from '../../globals.js'
+import g from '../../globals.js';
+import {largestSmall} from '../../globals.js';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -18,7 +19,7 @@ const StyledHeader = styled.header`
     position: fixed;
     top: 0;
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         transform-style: preserve-3d;
 
         &::after {
@@ -38,22 +39,22 @@ const StyledHeader = styled.header`
     ${props => props.open && css`
         height: var(--header-open-height) !important;
         
-        @media only screen and (min-width: 768px) {
+        @media ${g.atleastMedium} {
             &::after {
                 opacity: 0.4;
             }  
         }`
     }
 
-    @media only screen and (max-width: 767px) {
+    @media ${g.small} {
         max-height: var(--header-mobile-height);        
     }
 `
 
 export default class Header extends Component {
     
-    defaultHeight = globalVars.defaultHeaderHeight;
-    minHeight = globalVars.minHeaderHeightSmall;
+    defaultHeight = g.defaultHeaderHeight;
+    minHeight = g.minHeaderHeightSmall;
 
     constructor() {
         super();
@@ -79,11 +80,11 @@ export default class Header extends Component {
     }
 
     checkWidth() {
-        return window.innerWidth > 767; // possibly store in variable
+        return window.innerWidth > largestSmall;
     }
 
     setMinHeight() {
-        this.minHeight = this.checkWidth() ? globalVars.minHeaderHeightLarge : globalVars.minHeaderHeightSmall;
+        this.minHeight = this.checkWidth() ? g.minHeaderHeightLarge : g.minHeaderHeightSmall;
         this.setHeight();
     }
 

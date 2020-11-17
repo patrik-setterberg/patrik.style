@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import g from '../../../../globals.js';
 
 const StyledHamburger = styled.div`
     & input {
@@ -78,7 +79,7 @@ const StyledHamburger = styled.div`
         width: 77%;
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         & input {
             height: 50px;
             width: 50px;

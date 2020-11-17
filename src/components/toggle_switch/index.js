@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {updateKeyboardNavState} from '../../utils/utils.js';
+import g from '../../globals.js';
 
 /* 
    ToggleSwitch
@@ -38,7 +39,7 @@ const Label = styled.label`
     position: absolute;
     right: 0.5rem;
     top: 0;
-    transition: box-shadow 1.2s ease-in-out;
+    transition: box-shadow 1s ease-in-out;
 
     &::after {
         content: '';
@@ -56,7 +57,7 @@ const Label = styled.label`
         box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         height: 32px;
         width: 64px;
         line-height: 2.1;

@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import FooterIcon from '../footer_icon';
 import TextLink from '../text_link';
+import g from '../../../../globals.js';
 
 const ContactWrapper = styled.div`
     margin-top: var(--default-padding);
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         width: 32%;
         margin-top: 0;    
     }

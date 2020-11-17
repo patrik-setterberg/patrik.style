@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import MenuListItem from '../menu_list_item';
+import g from '../../../../globals.js';
 
 const StyledMenuList = styled.ul`
     list-style-type: none;
@@ -17,8 +18,9 @@ const StyledMenuList = styled.ul`
         opacity: 1;`
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.medium} {
         top: 7rem;
+        background-color: red;
     }
 `
 

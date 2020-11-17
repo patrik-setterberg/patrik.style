@@ -1,20 +1,32 @@
 import {createGlobalStyle} from 'styled-components';
 
+// MEDIA BREAKPOINT VARS TWEAK HERE
+const largestSmall = 767; // px
+const largestMedium = 1299; // px
+
+export {largestSmall};
+
 const globalVars = {
     
     // Header
     minHeaderHeightSmall: 74, // px
-    minHeaderHeightLarge: 95, //px
+    minHeaderHeightLarge: 98, //px
     defaultHeaderHeight: 500, // px
     headerOpenHeight: 600, // px
+
+
+    // Media breakpoints
+    small: `only screen and (max-width: ${largestSmall}px)`,
+    medium: `only screen and (min-width: ${largestSmall+1}px) and (max-width: ${largestMedium}px)`,
+    atMostMedium: `only screen and (max-width: ${largestMedium}px)`,
+    atleastMedium: `only screen and (min-width: ${largestSmall+1}px)`,
+    large: `only screen and (min-width: ${largestMedium+1}px)`,
     
     // Container
     containerWidthMedium: 700,
     containerWidthLarge: 'min(60%, 1200px)',
 }
-
-export {globalVars};
-
+export default globalVars;
 
 const GlobalStyle = createGlobalStyle`    
     :root {
@@ -44,20 +56,20 @@ const GlobalStyle = createGlobalStyle`
     
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${globalVars.atleastMedium} {
         :root {
             --header-open-height: ${globalVars.headerOpenHeight}px;
             --default-padding: 2rem;
         }
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+    @media ${globalVars.medium} {
         :root {
             --container-width: ${globalVars.containerWidthMedium}px;
         }
     }
 
-    @media only screen and (min-width: 1300px) {
+    @media ${globalVars.large} {
         :root {
             --container-width: ${globalVars.containerWidthLarge};
         }

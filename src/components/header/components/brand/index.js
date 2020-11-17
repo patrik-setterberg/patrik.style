@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
+import g from '../../../../globals.js';
 
 const StyledBrand = styled.div`
     width: 100%;
     margin-left: -38px; /* width of menu */
     
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         margin-left: -44px;
     }
 `
@@ -25,14 +26,14 @@ const H1 = styled.h1`
         color: var(--color-white);
     }
 
-    @media only screen and (min-width: 768px) {
+    @media ${g.atleastMedium} {
         & span {
             text-shadow: 0 0 1px rgba(0, 0, 0, 0);
             transition: text-shadow 1s ease-in-out;
         }
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 1299px) {
+    @media ${g.medium} {
         font-size: 44px;
         
         & span {
@@ -40,7 +41,7 @@ const H1 = styled.h1`
         }
     }
 
-    @media only screen and (min-width: 1300px) {
+    @media ${g.large} {
         font-size: 56px;
 
         & span {
@@ -50,11 +51,11 @@ const H1 = styled.h1`
 
     ${props => props.open && css`
     
-        @media only screen and (max-width: 767px) {
+        @media ${g.small} {
             opacity: 0;    
         }
         
-        @media only screen and (min-width: 768px) {
+        @media ${g.atleastMedium} {
             & span {
                 text-shadow: 0 0 9px rgba(255, 255, 255, 0.4);
             }
